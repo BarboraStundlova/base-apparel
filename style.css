@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 340px;
+  width: 340px;
   background-image: linear-gradient(hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 
@@ -54,10 +54,11 @@ body {
   font-weight: bold;
   line-height: 20px;
 }
-.inputContainer{
+.inputContainer {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .input {
@@ -67,18 +68,21 @@ body {
   border-radius: 30px;
   height: 28px;
   width: 60%;
-  padding-left:20px;
+  padding-left: 20px;
+  color: #1b1c1e;
 }
 
-:focus{
+.input:focus {
   outline: none;
-  color: hsl(0, 36%, 70%);
-  font-family: 'Josefin Sans', sans-serif;  
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 12px;
-  padding-left:20px;
-
+  padding-left: 20px;
 }
-  
+:invalid {
+  background-image: url('images/icon-error.svg');
+  background-repeat: no-repeat;
+  background-position: 75%;
+}
 
 ::placeholder {
   color: hsl(0, 36%, 70%);
@@ -86,6 +90,105 @@ body {
   font-size: 12px;
 }
 
+button {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: linear-gradient(
+    to right,
+    hsl(0, 80%, 86%),
+    hsl(0, 74%, 74%)
+  );
+  border: none;
+  border-radius: 30px;
+  width: 45px;
+  position: absolute;
+  left: 71%;
+  height: 100%;
+  outline: none;
+}
+
+button:hover {
+  filter: brightness(120%);
+}
+
 footer {
   margin-top: 40px;
+}
+.photoDesktop {
+  display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    flex-direction: row;
+  }
+
+  .main {
+    height: 100vh;
+    flex-basis: 67%;
+    justify-content: flex-start;
+    align-items: initial;
+  }
+
+  .logo {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+  }
+  .h1 {
+    align-items: initial;
+    text-align: initial;
+    justify-content: initial;
+    margin-left: 100px;
+    font-size: 60px;
+  }
+
+  .were {
+    text-align: initial;
+  }
+
+  .photo {
+    display: none;
+  }
+  .photoDesktop {
+    height: 100vh;
+    display: initial;
+  }
+
+  .paragraph {
+    margin-left: 100px;
+    margin-right: 200px;
+    text-align: initial;
+    font-size: 25px;
+    line-height: 45px;
+  }
+
+  .inputContainer {
+    justify-content: initial;
+    margin-left: 100px;
+  }
+  .input {
+    height: 48px;
+  }
+
+  button {
+    width: 70px;
+    position: absolute;
+    left: 56%;
+    height: 100%;
+  }
+
+  .input:focus {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+
+  ::placeholder {
+    color: hsl(0, 36%, 70%);
+    font-size: 20px;
+  }
+  :invalid {
+    background-position: 85%;
+    background-size: 7%;
+  }
 }
